@@ -152,6 +152,6 @@ Toolkit.run(
   },
   {
     event: ["schedule", "workflow_dispatch"],
-    secrets: ["GITHUB_SECRET"],
+    secrets: ["GITHUB_TOKEN"],
   }
 );
