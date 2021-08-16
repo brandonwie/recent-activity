@@ -26362,6 +26362,7 @@ Toolkit.run(
     }
 
     if (startIdx !== -1 && endIdx === -1) {
+      tools.log.info('startIdx and endIdx are found');
       // Add one since the content needs to be inserted just after the initial comment
       startIdx++;
       content.forEach((line, idx) =>
@@ -26376,12 +26377,14 @@ Toolkit.run(
       );
 
       readmeContent = appendDate(readmeContent);
+      tools.log.info('readmeContent', readmeContent);
 
       // Update README
       fs.writeFileSync(readme_file, readmeContent.join("\n"));
 
       // Commit to the remote repository
       try {
+        tools.log.info('Enter try block to commit file');
         await commitFile();
       } catch (err) {
         tools.log.debug("Something went wrong");
@@ -26444,7 +26447,7 @@ Toolkit.run(
   },
   {
     event: ["schedule", "workflow_dispatch"],
-    secrets: ["GITHUB_TOKEN"],
+    secrets: ["ACTIVITY_TOKEN"],
   }
 );
 
