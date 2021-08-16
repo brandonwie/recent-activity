@@ -152,6 +152,6 @@ Toolkit.run(
   },
   {
     event: ["schedule", "workflow_dispatch"],
-    secrets: ["GH_TOKEN"],
+    secrets: ["GH_SECRET"],
   }
 );
