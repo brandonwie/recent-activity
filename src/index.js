@@ -34,7 +34,7 @@ Toolkit.run(
     let content = filterContent(eventData);
 
     let readmeContent;
-
+    tools.log.info("DOES THIS LOG EVER WORK??????");
     try {
       readmeContent = fs.readFileSync(readme_file, "utf-8").split("\n");
     } catch (err) {
@@ -152,6 +152,6 @@ Toolkit.run(
   },
   {
     event: ["schedule", "workflow_dispatch"],
-    secrets: ["GITHUB_TOKEN"],
+    secrets: ["GH_TOKEN"],
   }
 );
